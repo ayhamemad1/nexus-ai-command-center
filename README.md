@@ -72,10 +72,7 @@ npm start
 
 Then click `Generate brief`.
 
-The backend uses:
-
-- [OpenAI Responses API](https://platform.openai.com/docs/api-reference/responses)
-- [OpenAI models documentation](https://platform.openai.com/docs/models)
+The backend uses OpenAI through a small server-side proxy. Check the OpenAI developer documentation for current API and model details.
 
 ## Project Structure
 

@@ -18,6 +18,12 @@ const els = {
   serverStatus: document.getElementById("server-status"),
   activeAgents: document.getElementById("active-agents"),
   riskCount: document.getElementById("risk-count"),
+  workspacePeriod: document.getElementById("workspace-period"),
+  workspaceCompany: document.getElementById("workspace-company"),
+  workspaceMission: document.getElementById("workspace-mission"),
+  agentImpact: document.getElementById("agent-impact"),
+  projectsAtRisk: document.getElementById("projects-at-risk"),
+  readinessScore: document.getElementById("readiness-score"),
   portfolioValue: document.getElementById("portfolio-value"),
   automationCoverage: document.getElementById("automation-coverage"),
   executionHealth: document.getElementById("execution-health"),
@@ -63,12 +69,17 @@ function computeKpis() {
   const avgProgress = workspace.projects.reduce((sum, project) => sum + project.progress, 0) / workspace.projects.length;
   const exposure = workspace.risks.reduce((sum, risk) => sum + Math.round((risk.probability * risk.impact) / 100), 0);
   const executionHealth = Math.max(0, Math.round(avgProgress - exposure / 12));
+  const projectsAtRisk = workspace.projects.filter((project) => ["critical", "at-risk", "watch"].includes(project.health)).length;
+  const readiness = Math.max(0, Math.min(100, Math.round((avgProgress + latestAutomation + executionHealth) / 3)));
 
   return {
     portfolioValue,
+    agentImpact,
     latestAutomation,
     executionHealth,
     exposure,
+    projectsAtRisk,
+    readiness,
     activeAgents: workspace.agents.filter((agent) => agent.status === "active").length,
     openRisks: workspace.risks.length
   };
@@ -112,6 +123,12 @@ function statusBadge(value) {
 
 function renderKpis() {
   const kpis = computeKpis();
+  els.workspacePeriod.textContent = `${state.workspace.period} workspace`;
+  els.workspaceCompany.textContent = state.workspace.company;
+  els.workspaceMission.textContent = state.workspace.mission;
+  els.agentImpact.textContent = currency(kpis.agentImpact);
+  els.projectsAtRisk.textContent = kpis.projectsAtRisk;
+  els.readinessScore.textContent = `${kpis.readiness}%`;
   els.activeAgents.textContent = kpis.activeAgents;
   els.riskCount.textContent = kpis.openRisks;
   els.portfolioValue.textContent = currency(kpis.portfolioValue);
