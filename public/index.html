@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexus AI Command Center</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">NX</div>
+        <div>
+          <h1>Nexus AI</h1>
+          <p>Enterprise command center</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview" type="button">Overview</button>
+        <button class="nav-item" data-view="agents" type="button">Agents</button>
+        <button class="nav-item" data-view="projects" type="button">Projects</button>
+        <button class="nav-item" data-view="risks" type="button">Risk</button>
+        <button class="nav-item" data-view="knowledge" type="button">Knowledge</button>
+        <button class="nav-item" data-view="briefing" type="button">Briefing</button>
+      </nav>
+
+      <section class="side-card">
+        <div class="status-line">
+          <span id="server-dot" class="dot"></span>
+          <span id="server-status">Checking server</span>
+        </div>
+        <div class="side-stat">
+          <strong id="active-agents">0</strong>
+          <span>active agents</span>
+        </div>
+        <div class="side-stat">
+          <strong id="risk-count">0</strong>
+          <span>open risks</span>
+        </div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <span class="eyebrow">Multi-agent executive operations platform</span>
+          <h2 id="view-title">Overview</h2>
+        </div>
+        <div class="toolbar">
+          <select id="model-select" aria-label="Model">
+            <option value="gpt-4.1-mini">gpt-4.1-mini</option>
+            <option value="gpt-5.1">gpt-5.1</option>
+            <option value="gpt-4.1">gpt-4.1</option>
+          </select>
+          <input id="api-key" type="password" placeholder="Optional OpenAI key">
+          <button id="generate-brief" class="primary-button" type="button">Generate brief</button>
+          <button id="export-report" class="soft-button" type="button">Export</button>
+        </div>
+      </header>
+
+      <section id="overview-view" class="view active">
+        <div class="kpi-grid">
+          <article class="kpi">
+            <span>Portfolio Value</span>
+            <strong id="portfolio-value">$0</strong>
+            <small>Tracked opportunity and savings</small>
+          </article>
+          <article class="kpi">
+            <span>Automation Coverage</span>
+            <strong id="automation-coverage">0%</strong>
+            <small>Workflows touched by agents</small>
+          </article>
+          <article class="kpi">
+            <span>Execution Health</span>
+            <strong id="execution-health">0</strong>
+            <small>Progress adjusted by risk</small>
+          </article>
+          <article class="kpi">
+            <span>Critical Exposure</span>
+            <strong id="critical-exposure">0</strong>
+            <small>Risk-weighted priority score</small>
+          </article>
+        </div>
+
+        <div class="grid two-one">
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Operating Trend</h3>
+              <span>Revenue, cost, automation</span>
+            </div>
+            <canvas id="ops-chart" width="920" height="340"></canvas>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Live Timeline</h3>
+              <span>Today</span>
+            </div>
+            <div id="timeline-list" class="timeline"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="agents-view" class="view">
+        <div id="agent-grid" class="agent-grid"></div>
+      </section>
+
+      <section id="projects-view" class="view">
+        <div id="project-board" class="project-board"></div>
+      </section>
+
+      <section id="risks-view" class="view">
+        <div class="grid two-one">
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Risk Register</h3>
+              <span>Prioritized by exposure</span>
+            </div>
+            <div id="risk-list" class="stack"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Risk Matrix</h3>
+              <span>Impact x probability</span>
+            </div>
+            <canvas id="risk-chart" width="460" height="340"></canvas>
+          </section>
+        </div>
+      </section>
+
+      <section id="knowledge-view" class="view">
+        <div class="grid two-one">
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Knowledge Base</h3>
+              <span>Operating memory</span>
+            </div>
+            <div id="knowledge-list" class="stack"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Add Knowledge</h3>
+              <span>Local workspace</span>
+            </div>
+            <label class="field-label">Title</label>
+            <input id="knowledge-title" type="text" placeholder="Policy, playbook, memo">
+            <label class="field-label">Content</label>
+            <textarea id="knowledge-content" rows="9" placeholder="Paste operating context here..."></textarea>
+            <button id="add-knowledge" class="primary-button full" type="button">Add to workspace</button>
+          </section>
+        </div>
+      </section>
+
+      <section id="briefing-view" class="view">
+        <div class="grid two-one">
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Executive Brief</h3>
+              <span id="brief-source">Local strategy engine</span>
+            </div>
+            <div id="brief-output" class="brief-output">Generate a brief to summarize operations, risks, and next decisions.</div>
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Decision Queue</h3>
+              <span>Recommended approvals</span>
+            </div>
+            <div id="decision-list" class="stack"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>

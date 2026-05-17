@@ -1,0 +1,25 @@
+{
+  "name": "nexus-ai-command-center",
+  "version": "1.0.0",
+  "description": "A massive AI operations command center for multi-agent workspaces, business intelligence, risk tracking, and executive automation.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  },
+  "keywords": [
+    "ai-agents",
+    "command-center",
+    "dashboard",
+    "openai",
+    "business-intelligence",
+    "operations",
+    "automation"
+  ],
+  "author": "Ayham",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

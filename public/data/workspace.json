@@ -1,0 +1,203 @@
+{
+  "company": "Nexus Global Operations",
+  "period": "Q2 2026",
+  "mission": "Coordinate AI agents across revenue, finance, support, product, and compliance workstreams.",
+  "agents": [
+    {
+      "id": "agent-revenue",
+      "name": "Revenue Strategist",
+      "role": "Pipeline analysis, account prioritization, pricing suggestions",
+      "status": "active",
+      "confidence": 92,
+      "load": 74,
+      "impact": 870000,
+      "nextAction": "Prepare renewal risk memo for enterprise accounts",
+      "tools": ["CRM", "Forecast", "Email Drafting"]
+    },
+    {
+      "id": "agent-finance",
+      "name": "Finance Analyst",
+      "role": "Cashflow monitoring, anomaly review, budget variance",
+      "status": "active",
+      "confidence": 88,
+      "load": 61,
+      "impact": 420000,
+      "nextAction": "Investigate vendor spend increase in cloud infrastructure",
+      "tools": ["Ledger", "Bank Statements", "Budget Model"]
+    },
+    {
+      "id": "agent-support",
+      "name": "Support Commander",
+      "role": "Ticket routing, SLA risk detection, sentiment triage",
+      "status": "watching",
+      "confidence": 81,
+      "load": 86,
+      "impact": 310000,
+      "nextAction": "Escalate 14 SLA-risk tickets to priority queue",
+      "tools": ["Helpdesk", "Sentiment", "Knowledge Base"]
+    },
+    {
+      "id": "agent-product",
+      "name": "Product Intelligence",
+      "role": "Feature requests, churn signals, launch readiness",
+      "status": "active",
+      "confidence": 84,
+      "load": 57,
+      "impact": 530000,
+      "nextAction": "Cluster customer feedback for Q3 roadmap",
+      "tools": ["Roadmap", "Feedback", "Analytics"]
+    },
+    {
+      "id": "agent-risk",
+      "name": "Risk Sentinel",
+      "role": "Policy drift, compliance exposure, contract obligations",
+      "status": "critical",
+      "confidence": 79,
+      "load": 68,
+      "impact": 210000,
+      "nextAction": "Review 3 vendor contracts missing data retention clauses",
+      "tools": ["Contracts", "Policy Search", "Audit Trail"]
+    },
+    {
+      "id": "agent-ops",
+      "name": "Operations Planner",
+      "role": "Workload balancing, dependency tracking, weekly execution plan",
+      "status": "active",
+      "confidence": 90,
+      "load": 66,
+      "impact": 390000,
+      "nextAction": "Reassign blocked launch tasks to available owners",
+      "tools": ["Projects", "Calendar", "Task Graph"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Enterprise Renewal Rescue",
+      "owner": "Revenue Strategist",
+      "health": "at-risk",
+      "progress": 64,
+      "budget": 120000,
+      "value": 1250000,
+      "due": "2026-06-08",
+      "tasks": [
+        "Segment accounts by renewal risk",
+        "Draft executive outreach",
+        "Prepare concession boundaries",
+        "Schedule customer success review"
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Cloud Spend Optimization",
+      "owner": "Finance Analyst",
+      "health": "watch",
+      "progress": 51,
+      "budget": 80000,
+      "value": 460000,
+      "due": "2026-06-14",
+      "tasks": [
+        "Audit compute utilization",
+        "Flag duplicate environments",
+        "Negotiate committed-use discount",
+        "Create savings forecast"
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Support SLA Stabilization",
+      "owner": "Support Commander",
+      "health": "critical",
+      "progress": 43,
+      "budget": 45000,
+      "value": 340000,
+      "due": "2026-05-29",
+      "tasks": [
+        "Route priority tickets",
+        "Refresh escalation macros",
+        "Identify top defect themes",
+        "Publish daily SLA report"
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Q3 Product Launch Readiness",
+      "owner": "Product Intelligence",
+      "health": "healthy",
+      "progress": 78,
+      "budget": 210000,
+      "value": 1800000,
+      "due": "2026-07-01",
+      "tasks": [
+        "Finalize launch checklist",
+        "Review beta feedback",
+        "Prepare enablement docs",
+        "Confirm analytics events"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "critical",
+      "title": "SLA breach risk in enterprise support queue",
+      "owner": "Support Commander",
+      "probability": 78,
+      "impact": 86,
+      "mitigation": "Reassign queue ownership and launch two-hour escalation review."
+    },
+    {
+      "severity": "high",
+      "title": "Revenue renewal exposure across six strategic accounts",
+      "owner": "Revenue Strategist",
+      "probability": 64,
+      "impact": 91,
+      "mitigation": "Create executive sponsor map and renewal offer ladder."
+    },
+    {
+      "severity": "high",
+      "title": "Vendor contract data retention gaps",
+      "owner": "Risk Sentinel",
+      "probability": 59,
+      "impact": 73,
+      "mitigation": "Patch contract templates and request vendor addenda."
+    },
+    {
+      "severity": "medium",
+      "title": "Cloud spend variance above monthly plan",
+      "owner": "Finance Analyst",
+      "probability": 67,
+      "impact": 58,
+      "mitigation": "Freeze unused environments and renegotiate forecasted usage."
+    }
+  ],
+  "metrics": [
+    { "month": "Jan", "revenue": 820000, "cost": 410000, "tickets": 940, "automation": 32 },
+    { "month": "Feb", "revenue": 880000, "cost": 430000, "tickets": 1010, "automation": 39 },
+    { "month": "Mar", "revenue": 930000, "cost": 455000, "tickets": 1125, "automation": 44 },
+    { "month": "Apr", "revenue": 990000, "cost": 490000, "tickets": 1210, "automation": 51 },
+    { "month": "May", "revenue": 1080000, "cost": 520000, "tickets": 1345, "automation": 57 },
+    { "month": "Jun", "revenue": 1140000, "cost": 535000, "tickets": 1290, "automation": 63 }
+  ],
+  "knowledge": [
+    {
+      "title": "Operating Principles",
+      "content": "Prioritize high-impact work, document decisions, keep humans in approval loops for legal, financial, or customer-impacting actions."
+    },
+    {
+      "title": "Agent Safety Policy",
+      "content": "Agents may draft, classify, summarize, and recommend. Agents may not send customer communications, approve spend, or change contracts without explicit human approval."
+    },
+    {
+      "title": "Executive Reporting Standard",
+      "content": "Every weekly memo must include business impact, risks, responsible owner, decision needed, and the next measurable action."
+    }
+  ],
+  "timeline": [
+    { "time": "08:30", "event": "Risk Sentinel flagged missing vendor retention clauses", "type": "risk" },
+    { "time": "09:15", "event": "Finance Analyst detected 18% cloud spend variance", "type": "finance" },
+    { "time": "10:10", "event": "Support Commander escalated enterprise SLA queue", "type": "support" },
+    { "time": "11:40", "event": "Revenue Strategist generated renewal account priorities", "type": "revenue" },
+    { "time": "13:05", "event": "Operations Planner identified launch dependency conflict", "type": "ops" },
+    { "time": "15:20", "event": "Product Intelligence clustered beta feedback into 7 themes", "type": "product" }
+  ]
+}
