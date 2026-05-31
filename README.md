@@ -1,8 +1,15 @@
 # Nexus AI Command Center
 
-A massive enterprise-style AI operations command center for coordinating AI agents, projects, risks, executive decisions, knowledge memory, and automated briefings.
+An enterprise-style AI operations command center for supervising AI agents, project execution, business risk, knowledge memory, and executive decisions.
 
-This is designed as a portfolio-grade showcase project: it looks like a serious internal tool a company could use to supervise AI agents across revenue, finance, support, product, compliance, and operations.
+Nexus is designed as a portfolio-grade internal tool, not a simple chat demo. It models how a company could coordinate AI-assisted work across revenue, finance, support, product, compliance, and operations while keeping risk, confidence, ownership, and decision history visible.
+
+## Portfolio Value
+
+- Demonstrates product thinking around AI operations, not just model calls.
+- Combines agent status, project portfolio tracking, risk analytics, and executive reporting in one interface.
+- Shows strong dashboard design for scanning, prioritization, and repeated operational use.
+- Supports local operation by default with optional OpenAI-backed board memo generation.
 
 ## What It Does
 
@@ -90,13 +97,13 @@ nexus-ai-command-center/
   LICENSE
 ```
 
-## Why This Project Is Big
+## Why This Project Stands Out
 
-Most AI demos are a chat box. This project is an operations platform:
+Most AI demos stop at a chat box. This project behaves more like an operations platform:
 
 - It models a full business workspace.
 - It has multiple agent personas and responsibilities.
-- It tracks risk, value, execution, automation, and decisions.
+- It tracks risk, value, execution, automation, confidence, and decisions.
 - It includes visual analytics.
 - It supports local operation and optional AI enhancement.
 - It is easy to extend into a real SaaS dashboard.
